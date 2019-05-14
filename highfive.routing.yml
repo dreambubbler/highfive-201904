@@ -1,0 +1,40 @@
+# In order to to create pages it is necessary to define routes for them. A route
+# maps a URL path to a controller. It defines with what function or method will
+# be called when a URL is accessed.
+
+# Menu items corresponding to these URLs are defined separately in the
+# highfive.menu_links.yml file.
+
+# Example:
+#   If the user accesses http://example.com/highfive/demo, the routing
+#   system will look for a route the path of 'highfive/demo'.
+#   In this case it will find a match, since we
+#   define the highfive/demo path below on line 22.
+#   Upon finding a path match, Drupal will execute the specified '_controller' callback (i.e. line 24).
+#   In this case the callback is defined as a classname
+#   "\Drupal\highfive\Controller\HighFiveController" and the method of the class
+#   "tutorial". This is found in the file /src/Controller/HighFiveController.php
+
+# Notice that the user must have the permission we define in highfive.permissions.yml
+# That permission has the machine name of 'access highfive demo'. (i.e. line 27)
+
+highfive.demo_route:
+  path: '/highfive/demo'
+  defaults:
+    _controller: '\Drupal\highfive\Controller\HighFiveController::tutorial'
+    _title: 'High Five Demonstration'
+  requirements:
+    _permission: 'access highfive demo'
+
+# TODO: Task 5) Create a route for a page 'High Five Definition'
+#               with the path of 'highfive/about'
+#               and permission of 'access highfive about'
+
+
+
+# TODO: Task 10) Create a route with arguments {first} and {second} which utilizes a page callback
+#          which displays a simple message saying "{first} and {second} gave each other a high five!"
+#          - Use the path of "highfive/{first}/{second}"
+#          - Use permission of 'give highfives', which needs to be defined in highfive.permissions.yml
+#          - See page_example.routing.yml of the Examples module for more details of dynamic routes.
+
